@@ -4,6 +4,19 @@
  */
 exports.up = function (knex) {
     return knex.schema
+        
+        .createTable('students', table => {
+            table.increments('id').primary();
+            table.string('name');
+            table.string('class');
+            table.string('dob');
+        })
+
+        .createTable('teachers', table => {
+            table.increments('id').primary();
+            table.string('name');    
+        })
+
         .createTable('logs', table => {
             table.increments('id').primary();
             table.string('toilet');
@@ -27,25 +40,13 @@ exports.up = function (knex) {
                 .onDelete('CASCADE');
         })
 
-        .createTable('students', table => {
-            table.increments('id').primary();
-            table.string('name');
-            table.string('class');
-            table.string('dob');
-        })
-
-        .createTable('teachers', table => {
-            table.increments('id').primary();
-            table.string('name');    
-        })
-
         .createTable('comments', table => {
             table.increments('id').primary();
             table.string('comment');
             table.time('time');
             table.integer('student_id').unsigned().notNullable();
             table.integer('teacher_id').unsigned().notNullable();
-            table.increments('log_id').unsigned().notNullable();
+            table.integer('log_id').unsigned().notNullable();
 
             //   define the foreign key
             table
