@@ -4,18 +4,25 @@
  */
 exports.up = function (knex) {
     return knex.schema
-        
-        .createTable('students', table => {
-            table.increments('id').primary();
-            table.string('name');
-            table.string('class');
-            table.string('dob');
-        })
 
         .createTable('teachers', table => {
             table.increments('id').primary();
-            table.string('name');    
+            table.string('name');
         })
+
+        .createTable('students', table => {
+            table.increments('id').primary();
+            table.string('name');
+            table.integer('teacher_id').unsigned().notNullable();
+
+            // define foreign key
+            table
+                .foreign('teacher_id')
+                .references('id')
+                .inTable('teachers')
+                .onDelete('CASCADE');
+        })
+
 
         .createTable('logs', table => {
             table.increments('id').primary();
@@ -60,7 +67,7 @@ exports.up = function (knex) {
                 .references('id')
                 .inTable('teachers')
                 .onDelete('CASCADE');
-            
+
             table
                 .foreign('log_id')
                 .references('id')
