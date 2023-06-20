@@ -1,0 +1,10 @@
+{
+    id
+    date
+    student
+    teacher
+    type (of activity): meal, toilet, sleep, play
+    start time
+    end time
+    description
+}
