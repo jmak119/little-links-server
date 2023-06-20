@@ -27,6 +27,6 @@ exports.seed = function (knex) {
       return knex('logs').insert(dailyLogsData);
     })
     .then(function () {
-      return knex('comments').insert(commentsData);
+      // return knex('comments').insert(commentsData);
     });
 };

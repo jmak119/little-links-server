@@ -26,13 +26,14 @@ exports.up = function (knex) {
 
         .createTable('logs', table => {
             table.increments('id').primary();
-            table.string('toilet');
-            table.string('sleep');
-            table.string('meals');
-            table.date('date');
             table.integer('student_id').unsigned().notNullable();
             table.integer('teacher_id').unsigned().notNullable();
-
+            table.date('date');
+            table.string('type');
+            table.time('start_time');
+            table.time('end_time');
+            table.string('description');
+            
             //   define the foreign key
             table
                 .foreign('student_id')
