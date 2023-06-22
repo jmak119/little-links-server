@@ -8,7 +8,8 @@
     "migrate": "npx knex migrate:latest",
     "migrate:down": "npx knex migrate:down",
     "migrate:rollback": "npx knex migrate:rollback",
-    "seed": "npx knex seed:run"
+    "seed": "npx knex seed:run",
+    "start": "nodemon app.js"
   },
   "keywords": [
     "education",

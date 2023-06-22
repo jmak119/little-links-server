@@ -79,6 +79,87 @@ module.exports = [
       end_time: '14:10',
       description: 'Coughing in sleep'
     },
+    {
+     
+      student_id: 4,
+      teacher_id: 1,
+      date: '2023-06-28',
+      type: 'toilet',
+      start_time: '9:00',
+      end_time: '9:05',
+      description: 'BM'
+    },
+    {
+     
+      student_id: 4,
+      teacher_id: 1,
+      date: '2023-06-28',
+      type: 'toilet',
+      start_time: '10:30',
+      end_time: '10:35',
+      description: 'ACC'
+    },
+    {
+     
+      student_id: 4,
+      teacher_id: 1,
+      date: '2023-06-28',
+      type: 'toilet',
+      start_time: '12:30',
+      end_time: '12:35',
+      description: 'W'
+    },
+    {
+     
+      student_id: 4,
+      teacher_id: 1,
+      date: '2023-06-28',
+      type: 'toilet',
+      start_time: '14:30',
+      end_time: '14:35',
+      description: 'W'
+    },
+    {
+     
+      student_id: 4,
+      teacher_id: 1,
+      date: '2023-06-28',
+      type: 'meal',
+      start_time: '8:30',
+      end_time: '9:00',
+      description: 'Breakfast: 1/2 serving eggs + toast'
+    },
+    {
+     
+      student_id: 4,
+      teacher_id: 1,
+      date: '2023-06-28',
+      type: 'meal',
+      start_time: '11:30',
+      end_time: '12:30',
+      description: 'Lunch: 2 serving chicken + rice + vegetables'
+    },
+    {
+     
+      student_id: 4,
+      teacher_id: 1,
+      date: '2023-06-28',
+      type: 'meal',
+      start_time: '14:30',
+      end_time: '14:45',
+      description: 'Snack: 1 serving yogurt + fruit'
+    },
+    {
+     
+      student_id: 4,
+      teacher_id: 1,
+      date: '2023-06-28',
+      type: 'sleep',
+      start_time: '12:45',
+      end_time: '14:20',
+      description: 'Slept well'
+    },
+
 
 
 

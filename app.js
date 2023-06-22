@@ -2,12 +2,15 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 5050;
+const PORT = process.env.PORT || 8080;
+const cors = require("cors");
 
 const studentRoutes = require('./routes/student-routes');
 const teacherRoutes = require('./routes/teacher-routes');
 const dailyLogRoutes = require('./routes/dailyLog-routes');
 const commentsRoutes = require('./routes/comments-routes');
+
+app.use(cors({ origin: process.env.CORS_ORIGIN }));
 
 // Basic home route
 app.get('/', (_req, res) => {
@@ -21,6 +24,6 @@ app.use('/dailyLogs', dailyLogRoutes);
 app.use('/comments', commentsRoutes);
 
 app.listen(PORT, () => {
-    console.log(`Running at http://localhost:${port}`);
+    console.log(`Running at http://localhost:${PORT}`);
 });
 
