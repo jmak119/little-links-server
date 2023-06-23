@@ -14,6 +14,8 @@ router
     .route("/:date/:id/students")
     .get(dailyLogController.joinTables);
 
+    
+
 // router
 //     .route('/:id/posts')
 //     .get(dailyLogController.posts);

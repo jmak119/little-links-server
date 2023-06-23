@@ -38,7 +38,6 @@ const findByDate = (req, res) => {
   };
 
   const joinTables = (req, res) => {
-    console.log("here");
     knex("logs")
       .join("students", "students.id", "logs.student_id")
       .join("teachers", "teachers.id", "logs.teacher_id")
@@ -54,6 +53,8 @@ const findByDate = (req, res) => {
         });
       });
   }
+
+ 
 
   // const posts = (req, res) => {
   //   knex("logs")

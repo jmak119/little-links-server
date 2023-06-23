@@ -10,7 +10,7 @@ const teacherRoutes = require('./routes/teacher-routes');
 const dailyLogRoutes = require('./routes/dailyLog-routes');
 const commentsRoutes = require('./routes/comments-routes');
 
-app.use(cors({ origin: process.env.CORS_ORIGIN }));
+app.use(cors());
 
 // Basic home route
 app.get('/', (_req, res) => {
