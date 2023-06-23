@@ -1,4 +1,4 @@
-const teachers = require('../seed-data/teachers');
+
 
 const knex = require('knex')(require('../knexfile'));
 
