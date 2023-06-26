@@ -8,7 +8,6 @@ const findOne = (req, res) => {
       .where({ "logs.student_id" : req.params.id})
       .select("logs.*","students.name AS student_name", "teachers.name AS teacher_name")
       .then((students) => {
-        console.log(students);
         res.status(200).json(students);
       })
       .catch((error) => {
