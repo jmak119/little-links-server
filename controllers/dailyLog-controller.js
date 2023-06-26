@@ -54,8 +54,6 @@ const findByDate = (req, res) => {
       });
   }
 
- 
-
   // const posts = (req, res) => {
   //   knex("logs")
   //     .join("post", "post.user_id", "user.id")

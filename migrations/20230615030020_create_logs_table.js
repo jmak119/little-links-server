@@ -23,14 +23,6 @@ exports.up = function (knex) {
                 .onDelete('CASCADE');
         })
 
-        // .createTable('toilet', table => {
-        //     table.increments('id').primary();
-        //     table.integer('student_id').unsigned().notNullable();
-        //     table.integer('teacher_id').unsigned().notNullable();
-        //     table.time('time');
-        // })
-
-
         .createTable('logs', table => {
             table.increments('id').primary();
             table.integer('student_id').unsigned().notNullable();
