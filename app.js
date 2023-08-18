@@ -11,6 +11,9 @@ const dailyLogRoutes = require('./routes/dailyLog-routes');
 const commentsRoutes = require('./routes/comments-routes');
 
 app.use(cors());
+app.use(express.json());
+
+const userRoutes = require('./routes/user-routes');
 
 // Basic home route
 app.get('/', (_req, res) => {
@@ -18,6 +21,7 @@ app.get('/', (_req, res) => {
 });
 
 // User routes
+app.use('/users', userRoutes);
 app.use('/students', studentRoutes);
 app.use('/teachers', teacherRoutes);
 app.use('/dailyLogs', dailyLogRoutes);
