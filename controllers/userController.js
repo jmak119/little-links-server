@@ -31,3 +31,17 @@ const findOne = (req, res) => {
             });
         });
 }
+
+const posts = (req, res) => {
+    knex("user")
+        .join("post", "post.user_id", "user.id")
+        .where({ user_id: req.params.id })
+        .then((posts) => {
+            res.status(200).json(posts);
+        })
+        .catch((error) => {
+            res.status(500).json({
+              message: `Unable to retrieve posts for user with ID: ${req.params.id} ${error}`,
+            });
+        });
+}
