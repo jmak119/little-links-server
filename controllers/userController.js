@@ -45,3 +45,29 @@ const posts = (req, res) => {
             });
         });
 }
+
+const add = (req,res) => {
+    const {name, email, password } = req.body
+
+    knex("user")
+        .insert({
+            name,
+            email,
+            password
+        })
+        .then((result) => {
+            return knex ("user")
+            .where({ id: result[0] })
+        })
+        .then((createdUser) => {
+            res.status(201).json(createdUser);
+        })
+        .catch((error) => {
+            res.status(500).json({
+              message: "Unable to create new user"
+            });
+        })
+}
+
+
+
