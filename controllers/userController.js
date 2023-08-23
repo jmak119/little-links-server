@@ -94,3 +94,30 @@ const update = (req, res) => {
         });
 }
 
+const remove = (req, res) => {
+    knex("user")
+      .where({ id: req.params.id })
+      .del()
+      .then((result) => {
+        if (result === 0) {
+          return res.status(400).json({
+            message: `User with ID: ${req.params.id} to be deleted not found.`,
+          });
+        }
+  
+        // no content response
+        res.sendStatus(204);
+      })
+      .catch(() => {
+        res.status(500).json({ message: "Unable to delete user" });
+      });
+  };
+
+  module.exports = {
+    index,
+    findOne,
+    posts,
+    add,
+    update,
+    remove
+  }
