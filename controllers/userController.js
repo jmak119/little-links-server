@@ -47,7 +47,7 @@ const posts = (req, res) => {
 }
 
 const add = (req,res) => {
-    const {name, email, password } = req.body
+    const {name, email, password } = req.body;
 
     knex("user")
         .insert({
@@ -69,5 +69,28 @@ const add = (req,res) => {
         })
 }
 
+const update = (req, res) => {
+    const {name, email, password} =  req.body;
 
+    knex("user")
+        .where({ id: req.params.id })
+        .update({
+            name,
+            email,
+            password
+        })
+        .then(() => {
+            return knex("user").where({
+                id: req.params.id
+            });
+        })
+        .then((updatedUser) => {
+            res.json(updatedUser[0]);
+        })
+        .catch(() => {
+            res
+              .status(500)
+              .json({ message: `Unable to update user with ID: ${req.params.id}` });
+        });
+}
 
